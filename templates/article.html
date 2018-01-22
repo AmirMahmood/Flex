@@ -17,8 +17,8 @@
       {% import 'partial/translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     {% endif %}
-    <h1 id="{{ article.slug }}">{{ article.title }}</h1>
-    <p>
+    <h1 dir="rtl" id="{{ article.slug }}">{{ article.title }}</h1>
+    <p dir="rtl">
       {{ _('Posted on %(when)s in %(category)s',
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
@@ -39,7 +39,7 @@
     </script>
   {% endif %}
 
-  <div>
+  <div dir="rtl">
     {{ article.content }}
   </div>
   <div class="tag-cloud">
@@ -54,7 +54,7 @@
 
   {% if ADD_THIS_ID %}
   <div class="center social-share">
-    <p>{{ _('Like this article? Share it with your friends!') }}</p>
+    <p dir="rtl">{{ _('Like this article? Share it with your friends!') }}</p>
     <div class="addthis_native_toolbox"></div>
     <div class="addthis_sharing_toolbox"></div>
     <div class="addthis_inline_share_toolbox"></div>
@@ -65,8 +65,8 @@
 
   {% if article.related_posts %}
   <div class="related-posts">
-    <h4>{{ _('You might enjoy') }}</h4>
-    <ul class="related-posts">
+    <h4 dir="rtl">{{ _('You might enjoy') }}</h4>
+    <ul dir="rtl" class="related-posts">
     {% for related_post in article.related_posts %}
       <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
     {% endfor %}
