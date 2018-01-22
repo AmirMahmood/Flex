@@ -37,7 +37,7 @@
       <div dir="rtl">
     {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %}
       {% if  article.featured_image %}
-        <img src="{{ article.featured_image }}">
+        <img class="featured-images" src="{{ article.featured_image }}">
       {% endif %}
       {{ article.summary }}
       <br>
