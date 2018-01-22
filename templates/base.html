@@ -30,7 +30,9 @@
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/font-awesome.min.css">
 
   {% if CUSTOM_CSS %}
-    <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
+    {% for CSS in CUSTOM_CSS %}
+        <link href="{{ SITEURL }}/{{ CSS }}" rel="stylesheet">
+    {% endfor %}
   {% endif %}
 
   {% if FEED_ALL_ATOM %}
@@ -178,6 +180,12 @@
 
   {% if GUAGES %}
     {% include "partial/guages.html" %}
+  {% endif %}
+
+  {% if CUSTOM_JS %}
+    {% for JS in CUSTOM_JS %}
+        <script type="text/javascript" src="{{ SITEURL }}/{{ JS }}"></script>
+    {% endfor %}
   {% endif %}
 
   {% if ADD_THIS_ID %}
