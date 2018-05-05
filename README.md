@@ -1,4 +1,4 @@
-# Flex
+# Flex-RTL
 
 RTL version of [Flex](https://github.com/alexandrevicenzi/Flex) theme - a minimalist [Pelican](http://blog.getpelican.com/) theme - with some new small features.
 
