@@ -35,6 +35,28 @@ DEFAULT_LANG = 'fa'
 LOCALE = 'fa'
 ```
 
+## How to stop pelican from converting Persian tags and categories to Latin alphabet (Pinglish)?
+
+when you add non ASCII or special characters in tags and categories, pelican converts them to ASCII characters or removes them.
+for example if you use `سیب` for tag, pelican converts it to `sb` or `sib`.
+
+to stop this, find `utils.py` in pelican's site-packages folder. find `slugify` function and find this lines and comment out them:
+
+```python
+value = unidecode(value)
+# ...
+value = value.encode('ascii', 'ignore')
+# ...
+return value.decode('ascii')
+```
+
+finally add this line to end of the function:
+
+```python
+return value
+```
+***Attention: these changes may cause unexpected problems.***
+
 ## Thanks
 
 Alexandre Vicenzi for Flex Theme - https://github.com/alexandrevicenzi/Flex
