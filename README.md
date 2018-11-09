@@ -46,8 +46,6 @@ to stop this, find `utils.py` in pelican's site-packages folder. find `slugify` 
 value = unidecode(value)
 # ...
 value = value.encode('ascii', 'ignore')
-# ...
-return value.decode('ascii')
 ```
 
 change this line:
@@ -62,7 +60,13 @@ to:
 value = unicodedata.normalize('NFKC', value).lower()
 ```
 
-finally add this line to end of the function:
+and finally change this line:
+
+```python
+return value.decode('ascii')
+```
+
+to:
 
 ```python
 return value
