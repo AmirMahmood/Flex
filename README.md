@@ -50,6 +50,18 @@ value = value.encode('ascii', 'ignore')
 return value.decode('ascii')
 ```
 
+change this line:
+
+```python
+value = unicodedata.normalize('NFKD', value).lower()
+```
+
+to:
+
+```python
+value = unicodedata.normalize('NFKC', value).lower()
+```
+
 finally add this line to end of the function:
 
 ```python
