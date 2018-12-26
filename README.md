@@ -51,13 +51,13 @@ value = value.encode('ascii', 'ignore')
 change this line:
 
 ```python
-value = unicodedata.normalize('NFKD', value).lower()
+value = unicodedata.normalize('NFKD', value)
 ```
 
 to:
 
 ```python
-value = unicodedata.normalize('NFKC', value).lower()
+value = unicodedata.normalize('NFKC', value)
 ```
 
 and finally change this line:
@@ -69,7 +69,7 @@ return value.decode('ascii')
 to:
 
 ```python
-return value
+return value.strip()
 ```
 ***Attention: these changes may cause unexpected problems.***
 
